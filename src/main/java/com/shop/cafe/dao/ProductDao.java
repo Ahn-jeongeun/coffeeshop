@@ -24,10 +24,11 @@ public class ProductDao {
 	private String DB_PW;
 
 	public List<Product> getAllProducts() throws Exception{
+		System.out.println(ProductDao getAllProducts);
 		Class.forName(DB_DRIVER);
 		try(
 				Connection con = DriverManager.getConnection(DB_URL,DB_USER,DB_PW);
-				PreparedStatement stmt = con.prepareStatement("select * from product");
+				PreparedStatement stmt = con.prepareStatement("select * from product limit 6");
 				ResultSet rs = stmt.executeQuery();
 				) {
 			List<Product> list = new ArrayList<>();
