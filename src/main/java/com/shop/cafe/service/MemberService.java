@@ -10,6 +10,10 @@ public class MemberService {
 	@Autowired
 	MemberDao memberDao;
 	
+	public Member login(Member m) throws Exception{
+		return memberDao.login(m);
+	}
+	
 	public void inserMember(Member m) throws Exception{
 		memberDao.insertMember(m);
 	}
